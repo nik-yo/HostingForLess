@@ -3,7 +3,7 @@ Resources:
   WebS3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: faithtech-web
+      BucketName: faithtech-web2
       PublicAccessBlockConfiguration:
         BlockPublicAcls: false
         BlockPublicPolicy: false
@@ -35,7 +35,7 @@ Resources:
         DefaultTTL: 30 # 86400
         MaxTTL: 30 # 31536000
         MinTTL: 30
-        Name: faithtech-web-cache-policy
+        Name: faithtech-web2-cache-policy
         ParametersInCacheKeyAndForwardedToOrigin:
           CookiesConfig: 
             CookieBehavior: none
@@ -51,7 +51,7 @@ Resources:
     Properties: 
       DistributionConfig:
         Aliases:
-          - faithtech.nikkiyodo.com
+          - faithtech2.nikkiyodo.com
         CustomErrorResponses:
           - ErrorCode: 404
             ResponseCode: 200
@@ -76,6 +76,6 @@ Resources:
   WebCertificate:
     Type: AWS::CertificateManager::Certificate
     Properties:
-      DomainName: faithtech.nikkiyodo.com
+      DomainName: faithtech2.nikkiyodo.com
       ValidationMethod: DNS
   
